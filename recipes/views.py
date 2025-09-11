@@ -1,13 +1,15 @@
-# from django.shortcuts import render
+from django.shortcuts import render  # Adicionado - Mostrar templates
 from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('HOME 2')
+    return render(request, 'recipes/home.html', context={
+        'name': 'Gustavo',
+    })
 
 
 def contato(request):
-    return HttpResponse('contato')
+    return render(request, 'recipes/contato.html')
 
 
 def sobre(request):
